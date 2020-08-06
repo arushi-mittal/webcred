@@ -239,4 +239,4 @@ def writetodatabse ():
 		"pronouns": pos[5],
 		"backlinks": getbacklinks(url)
 	}
-	db.collectionfact.insert_one(post)
+	db.collectionfact.insert_one(postfact)
