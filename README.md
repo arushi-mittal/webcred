@@ -2,7 +2,7 @@
 A Python API that calculates surface, content and off-page features and writes to a locally stores MongoDB database.
 
 Surface Features:
-  Top Level Domain, Count of Inlinks, Outlinks, Broken Links, Adverstisements, Page Load Time, Internationalization, Responsiveness, Last Modified Date and Time, Contact Info, Image to text ratio
+  Top Level Domain, Count of Inlinks, Outlinks, Broken Links, Advertisements, Page Load Time, Internationalization, Responsiveness, Last Modified Date and Time, Contact Info, Image to text ratio
   
 Content Features:
   Spelling Errors, Grammar Errors, Subjectivity, Polarity, POS Tagging
