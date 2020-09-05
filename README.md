@@ -1,5 +1,5 @@
 # webcred
-A Python API that calculates surface, content and off-page features and writes to a locally stores MongoDB database.
+A Python API that calculates surface, content and off-page features and writes to a locally stored MongoDB database.
 
 Surface Features:
   Top Level Domain, Count of Inlinks, Outlinks, Broken Links, Advertisements, Page Load Time, Internationalization, Responsiveness, Last Modified Date and Time, Contact Info, Image to text ratio
