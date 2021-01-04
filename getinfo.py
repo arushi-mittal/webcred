@@ -8,13 +8,14 @@ from htmldate import find_date
 import subprocess
 import json
 from textblob import TextBlob, Word
-from grammarbot import GrammarBotClient
+# from grammarbot import GrammarBotClient
 import spacy
 from pymongo import MongoClient
 import datetime
 from selenium import webdriver
 import re
 from sys import getsizeof
+import language_tool_python
 print('Enter URL')
 url = input()
 def getdomain (url, tld):
@@ -82,6 +83,7 @@ def pageloadtime (url):
 	return end
 def internationalization (pagedata, headerdata):
 	html = pagedata.find('html')
+	internationalized = False
 	if html.has_attr('lang'):
 		if html['lang'] != None:
 			internationalized = True
@@ -107,7 +109,7 @@ def getresponsiveness(url):
 	    else:
 	    	state = 0
     except KeyError:
-        print(logger.warning(response['error']['message']))
+        print("Key Error\n")
         state = 0
     return state
 def getdatetime (pagedata, headerdata):
@@ -177,9 +179,12 @@ def getsentiment (plaintext):
 	subjectivity = text.sentiment.subjectivity
 	return (polarity, subjectivity)
 def getgrammarerrors (plaintext):
-	client = GrammarBotClient()
-	res = client.check(plaintext)
-	return(len(res.matches))
+	# client = GrammarBotClient()
+	# res = client.check(plaintext)
+	# return(len(res.matches))
+	tool = language_tool_python.LanguageTool('en-US')
+	matches = tool.check(plaintext)
+	return len(matches)
 def getpos (plaintext):
 	poss = ['NOUN', 'VERB', 'ADJ', 'ADV', 'ADP', 'PRON']
 	count = {'NOUN': 0, 'VERB' : 0, 'ADJ' : 0, 'ADV' : 0, 'ADP' : 0, 'PRON' : 0}
@@ -231,7 +236,6 @@ def writetodatabse ():
 		"textimageratio": getimagetextratio(pagedata, domain, plaintext, tld),
 		"subjectivity": sentiment[1],
 		"polarity": sentiment[0],
-		"internationalized": internationalization(pagedata, headers),
 		"grammarerrors": getgrammarerrors(plaintext),
 		"spellingerrors": getspellingerrors(plaintext),
 		"nouns": pos['NOUN'],

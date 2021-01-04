@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="/home/arushi/FlaskApp/templates/js.js"></script>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link   rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>Preferences</title>
+    </head>
+    <body>
+        <div class="container" style="padding-top: 10%;">
+          <!-- <select name="Genres" id="Genres">
+            <option value = "Select" selected="selected">Select</option>
+            <option value="Personal">Personal</option>
+            <option value="Blog">Blog</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Articles">Articles</option>
+            <option value="Social">Social</option>
+          </select>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+          <script src="/home/arushi/FlaskApp/templates/js.js"></script> -->
+          <!-- <select name="Features" id="Features">
+            <option value = "Select" selected="selected">Select</option>
+            <option value="Surface">Surface</option>
+            <option value="Content">Content</option>
+            <option value="Off-Page">Off-Page</option>
+          </select> -->
+          <form action = "localhost:5000/pref" method = post>
+            {{ form.Feature }}
+            {{ form.Genre }}
+          </form>
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Feature Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Weightage</th>
+              </tr>
+            </thead>
+            <form action = "localhost:5000/pref" method = post>
+            <tbody>
+              <tr class="Surface">
+                <th scope="row">Top Level Domain</th>
+                <td>Surface</td>
+                <td>{{ form.S1Weightage }}</td>
+              </tr>
+              <tr class="Surface">
+                <th scope="row">Broken Links Count</th>
+                <td>Surface</td>
+                <td>{{ form.S2Weightage }}</td>
+              </tr>
+              <tr class="Surface">
+                <th scope="row">Inlinks Count</th>
+                <td>Surface</td>
+                <td>{{ form.S3Weightage }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Outlinks Count</th>
+                <td>Surface</td>
+                <td>{{ form.S4Weightage }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Advertisement Count</th>
+                <td>Surface</td>
+                <td>{{ form.S5Weightage }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Page Load Time</th>
+                <td>Surface</td>
+                <td>{{ form.S6Weightage }}</td>
+              </tr>
+              <tr class="Surface">
+                <th scope="row">Responsive Design</th>
+                <td>Surface</td>
+                <td>{{ form.S7Weightage }}</td>
+              </tr>
+              <tr class="Surface">
+                <th scope="row">Last Modified</th>
+                <td>Surface</td>
+                <td>{{ form.S8Weightage }}</td>
+              </tr>
+              <tr class="Surface">
+                <th scope="row">Internationalization</th>
+                <td>Surface</td>
+                <td>{{ form.S9Weightage }}</td>
+              </tr>
+              <tr class="Surface">
+                <th scope="row">Contact Information</th>
+                <td>Surface</td>
+                <td>{{ form.S10Weightage }}</td>
+              </tr>
+                <tr class = "Content">
+                  <th scope="row">Text to Image Ratio</th>
+                  <td>Content</td>
+                  <td>{{ form.C1Weightage }}</td>
+                </tr>
+                <tr class = "Content">
+                  <th scope="row">Cohesion</th>
+                  <td>Content</td>
+                  <td>{{ form.C2Weightage }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Subjectivity</th>
+                  <td>Content</td>
+                  <td>{{ form.C3Weightage }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Polarity</th>
+                  <td>Content</td>
+                  <td>{{ form.C4Weightage }}</td>
+                </tr>
+                <tr class = "Content">
+                  <th scope="row">Grammar</th>
+                  <td>Content</td>
+                  <td>{{ form.C5Weightage }}</td>
+                </tr>
+                <tr class = "Content">
+                  <th scope="row">POS Count</th>
+                  <td>Content</td>
+                  <td>{{ form.C6Weightage }}</td>
+                </tr>
+                <tr class = "Off-Page">
+                  <th scope="row">BackLink Count</th>
+                  <td>Off-Page</td>
+                  <td>{{ form.O1Weightage }}</td>
+                </tr>
+
+
+
+              
+            </tbody>
+          </table>
+          {{form.submit}}
+        </form>
+          </div>
+        </div>
+    </body>
+</html>
