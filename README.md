@@ -2,14 +2,14 @@
 
 Webcred is a customizable browser plug-in that can evaluate the credibility of a web page using various surface, content and off-page features.
 
-###Surface Features:
+### Surface Features:
   Top Level Domain, Count of Inlinks, Outlinks, Broken Links, Advertisements, Page Load Time, Internationalization, Responsiveness, Last Modified Date and Time, 
   Contact Info, Image to text ratio
   
-###Content Features:
+### Content Features:
   Spelling Errors, Grammar Errors, Subjectivity, Polarity, POS Tagging
   
-###Off-Page Features:
+### Off-Page Features:
   Backlinks Count
   
 The project consists of a login page, an extension and a database. Users are directed to a login page where they enter their credentials using either Google, 
