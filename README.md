@@ -33,3 +33,13 @@ The extension is the main part of the app that will be used by the end-users. It
 URL, the genre and the credibility score. 
 
 The Django framework is used to connect the browser extension to the rest of the app which calculates the credibility score and genre. [PENDING]
+
+
+#### FlaskApp: 
+Flask Login Page, preferences page.
+
+#### Extension:
+Extension front-end. Requires connection to django app.
+
+#### getinfo.py
+Separate functions to calculate the values for various features using webscraping libraries such as BeautifulSoup and Selenium. Each feature is calculated using a separate function entitled getFeatureName which returns the value or in case of an error, a default value.
