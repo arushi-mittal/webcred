@@ -1,4 +1,4 @@
-# webcred
+# Webcred
 
 Webcred is a customizable browser plug-in that can evaluate the credibility of a web page using various surface, content and off-page features.
 
